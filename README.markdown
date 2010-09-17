@@ -1,0 +1,1 @@
+#Sample App for Rails 3

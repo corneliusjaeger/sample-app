@@ -5,7 +5,7 @@ describe PagesController do
 
   before(:each) do
     #
-    @base_title = "Aikido Dojo"
+    @base_title = "Aikido Dojo Schuepfheim"
     #
   end
 

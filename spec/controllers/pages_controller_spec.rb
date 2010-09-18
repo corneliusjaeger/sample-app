@@ -48,29 +48,17 @@ describe PagesController do
     end
   end
   
-  describe "GET 'help'" do
+  describe "GET 'calendar'" do
     it "should be successful" do
-      get 'help'
+      get 'calendar'
       response.should be_success
     end
 
     it "should have the right title" do
-      get 'help'
+      get 'calendar'
       response.should have_selector("title",
-                                    :content => @base_title + " | Help")
+                                    :content => @base_title + " | Calendar")
     end
   end
   
-  describe "GET 'gallery'" do
-    it "should be successful" do
-      get 'gallery'
-      response.should be_success
-    end
-
-    it "should have the right title" do
-      get 'gallery'
-      response.should have_selector("title",
-                                    :content => @base_title + " | Gallery")
-    end
-  end
 end

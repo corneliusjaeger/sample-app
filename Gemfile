@@ -18,6 +18,10 @@ group :test do
   gem 'factory_girl_rails', '1.0'
 end
 
+gem 'nifty-generators'
+gem 'paperclip'
+
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

@@ -5,6 +5,7 @@ match '/signup', :to => 'users#new'
 match '/contact', :to => 'pages#contact'
 match '/about',   :to => 'pages#about'
 match '/help',    :to => 'pages#help'
+match '/gallery',    :to => 'pages#gallery'
 
 root :to => 'pages#home'
 

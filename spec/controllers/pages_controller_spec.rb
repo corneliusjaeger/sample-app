@@ -60,4 +60,17 @@ describe PagesController do
                                     :content => @base_title + " | Help")
     end
   end
+  
+  describe "GET 'gallery'" do
+    it "should be successful" do
+      get 'gallery'
+      response.should be_success
+    end
+
+    it "should have the right title" do
+      get 'gallery'
+      response.should have_selector("title",
+                                    :content => @base_title + " | Gallery")
+    end
+  end
 end

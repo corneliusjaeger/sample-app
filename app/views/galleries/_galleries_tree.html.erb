@@ -1,0 +1,3 @@
+<%- @galleries.each do |gallery| -%>
+  <%= render :partial => 'gallery_row', :locals => {:gallery => gallery} -%>
+<%- end -%>

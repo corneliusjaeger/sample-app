@@ -1,0 +1,9 @@
+<% unless @gallery.nil? %>
+<breadcrumb class="round">
+
+<% for gallery in @gallery.ancestors.reverse %>
+  <%= link_to h(gallery.name), gallery %> &gt;
+<% end %>
+
+</breadcrumb>
+<% end %>

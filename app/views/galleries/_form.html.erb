@@ -2,7 +2,7 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :parent_id %><br />
-    <%= f.text_field :parent_id %>
+	<%= f.collection_select :parent_id, Gallery.all(:order => "name"), :id, :name, :include_blank => true %>
   </p>
   <p>
     <%= f.label :name %><br />

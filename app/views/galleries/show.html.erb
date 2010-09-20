@@ -1,20 +1,23 @@
-<h1>Gallery</h1>
+<div style="float:right">
+	<% new_gallery = image_tag("add.png", :alt => "New Gallery", :class => "round") %>
+	<%= link_to new_gallery, new_gallery_path %>
+	<% edit_gallery = image_tag("database_edit.png", :alt => "Edit Gallery", :class => "round")%>
+	<%= link_to edit_gallery, edit_gallery_path(@gallery) %>
+	<% delete_gallery = image_tag("delete.png", :alt => "Delete Gallery", :class => "round")%>
+	<%= link_to delete_gallery, @gallery, :confirm => 'Are you sure?', :method => :delete %>
+</div>
 
-<p>
-  <strong>Parent:</strong>
-  <%= @gallery.parent_id %>
-</p>
-<p>
-  <strong>Name:</strong>
-  <%= @gallery.name %>
-</p>
-<p>
-  <strong>Content:</strong>
-  <%= @gallery.content %>
-</p>
 
-<p>
-  <%= link_to "Edit", edit_gallery_path(@gallery) %> |
-  <%= link_to "Destroy", @gallery, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", galleries_path %>
-</p>
+<% unless @gallery.children.empty? %>
+<menu class="round">
+	<ul>
+	  <% for gallery in @gallery.children %>
+	    <li><%= link_to h(gallery.name), gallery %></li>
+	  <% end %>
+	</ul>
+</menu>
+<% end %>
+
+<h1><%=h @gallery.name %></h1>
+
+<%= simple_format @gallery.content %>

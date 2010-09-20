@@ -1,21 +1,30 @@
-<h1>Galleries</h1>
+<div style="float:right">
+<% new_gallery = image_tag("add.png", :alt => "New Gallery", :class => "round") %>
+<%= link_to new_gallery, new_gallery_path %>
+</div>
 
-<table>
-  <tr>
-    <th>Parent</th>
-    <th>Name</th>
-    <th>Content</th>
-  </tr>
-  <% for gallery in @galleries %>
-    <tr>
-      <td><%= gallery.parent_id %></td>
-      <td><%= gallery.name %></td>
-      <td><%= gallery.content %></td>
-      <td><%= link_to "Show", gallery %></td>
-      <td><%= link_to "Edit", edit_gallery_path(gallery) %></td>
-      <td><%= link_to "Destroy", gallery, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
+<menu class="round">
+  <ul>
+	<%for gallery in Gallery.roots %>
+      <li><%= link_to h(gallery.name), gallery %>
+	  </li>
+	<% end %>
+  </ul>
+</menu>
 
-<p><%= link_to "New Gallery", new_gallery_path %></p>
+<h1>galleries</h1>
+<%- if @galleries.empty? -%>
+  <p><em>No galleries have been created yet.</em></p>
+<%- else -%>
+  <br />
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody id="gallery_tree">
+      <%= render :partial => 'galleries_tree' -%>
+    </tbody>
+  </table>
+<%- end -%>

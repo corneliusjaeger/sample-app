@@ -7,7 +7,7 @@ match '/signup', :to => 'users#new'
 match '/contact', :to => 'pages#contact'
 match '/about',   :to => 'pages#about'
 match '/calendar',:to => 'pages#calendar'
-match '/gallery', :to => 'pages#gallery'
+match '/galleria', :to => 'galleries#index'
 
 root :to => 'pages#home'
 

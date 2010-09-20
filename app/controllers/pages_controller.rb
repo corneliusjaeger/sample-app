@@ -16,7 +16,7 @@ class PagesController < ApplicationController
     @title = "Calendar"
   end
   
-  def gallery
+  def galleria
     @title = "Gallery"
   end
 end

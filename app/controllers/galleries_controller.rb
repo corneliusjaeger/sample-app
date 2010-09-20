@@ -40,5 +40,6 @@ class GalleriesController < ApplicationController
     @gallery.destroy
     flash[:notice] = "Successfully destroyed gallery."
     redirect_to galleries_url
-  end
+  end 
+  
 end

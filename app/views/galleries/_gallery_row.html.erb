@@ -1,0 +1,9 @@
+<tr class="<%= cycle('odd', 'even') -%>" id="gallery_<%= gallery.id -%>">
+  <td style="padding-left: <%= (1 * gallery.ancestors.length) + 1 -%>em;">
+    <%= link_to gallery.name, gallery -%> | 
+    <%= link_to 'Edit', edit_gallery_path(gallery) -%>
+  </td>
+</tr>
+<%- gallery.children.each do |sub| -%>
+  <%= render :partial => 'gallery_row', :locals => {:gallery => sub} -%>
+<%- end -%>
